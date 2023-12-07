@@ -1,0 +1,94 @@
+body{
+    font-family: 'Lato' , sans-serif;
+    font-weight: 700;
+    color: #000000; 
+    line-height: 1.5;
+    margin: 0; 
+}
+
+h1{
+    font-size: 40px;
+    font-family: 'Playfair Display' , serif;
+    padding-left: 100px;
+}
+
+h2{
+    font-size: 30px;
+    font-family: 'Playfair Display' , serif;
+    color: #401511;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+a {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.link{
+    text-decoration: underline;
+    font-size: 16px; 
+}
+
+.link:hover{
+    text-decoration: none;
+}
+
+nav {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: flex-end;
+    padding-right: 20px;
+    position: sticky;
+    top: 0;
+}
+
+.nav-link {
+    display: flex;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+hr{
+    margin: auto;
+    border-width: 0.1px;
+}
+
+.titleContainer{
+    background-image: url("/images/HeroImage.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+
+
+.CaseStudyContainer{
+    margin: auto;
+    max-width: 1000px;
+    width: 100%; 
+    margin-bottom: 60px; 
+    display: flex;
+    justify-content: center;
+}
+
+
+.CaseStudyCard{
+    display: ;
+    flex-direction: row;
+    width: 100%; 
+    margin: auto;
+    align-items: flex-start;
+}
