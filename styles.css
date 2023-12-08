@@ -9,7 +9,7 @@ body{
 h1{
     font-size: 40px;
     font-family: 'Playfair Display' , serif;
-    padding-left: 100px;
+    padding-left: 150px;
 }
 
 h2{
@@ -59,36 +59,219 @@ nav {
     text-transform: uppercase;
 }
 
+.nav-mobile {
+    display: none;
+  }
+
+  #menuToggle
+  {
+    display: block;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    margin: 20px 20px 30px 20px;
+  }
+  
+  #menuToggle a
+  {
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s ease;
+  }
+  
+  
+  #menuToggle input
+  {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+    
+    -webkit-touch-callout: none;
+  }
+  
+  #menuToggle span
+  {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #000000;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+  }
+  
+  #menuToggle span:first-child
+  {
+    transform-origin: 0% 0%;
+  }
+  
+  #menuToggle span:nth-last-child(2)
+  {
+    transform-origin: 0% 100%;
+  }
+  
+  #menuToggle input:checked ~ span
+  {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #000000;
+  }
+  
+  #menuToggle input:checked ~ span:nth-last-child(3)
+  {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+  
+  #menuToggle input:checked ~ span:nth-last-child(2)
+  {
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+  
+  #menu
+  {
+    position: absolute;
+    width: 300px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background: white;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;    
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+  
+  #menu li
+  {
+    padding: 10px 0;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  
+  #menuToggle input:checked ~ ul
+  {
+    transform: none;
+  }
+
+
 hr{
     margin: auto;
     border-width: 0.1px;
 }
 
 .titleContainer{
-    background-image: url("/images/HeroImage.jpg");
+    background-image: url("./images/HeroImage.jpg");
     background-size: cover;
     display: flex;
     align-items: center;
     margin-bottom: 60px;
     background-repeat: no-repeat;
-    height: 300px;
+    height: 200px;
+    width: 100%;
 }
 
 
 .CaseStudyContainer{
-    margin: auto;
     max-width: 1000px;
     width: 100%; 
     margin-bottom: 60px; 
-    display: flex;
     justify-content: center;
-}
-
-
-.CaseStudyCard{
-    display: ;
-    flex-direction: row;
-    width: 100%; 
     margin: auto;
-    align-items: flex-start;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
+
+.CaseStudyCard a {
+    display: flex;
+    width: 100%;
+    margin: 50px;
+    justify-content: space-around;
+}
+
+.CaseStudyCard a:hover {
+    text-decoration: none;
+}
+
+.CaseStudyImage img {
+    max-width: 100%;
+    height: auto;
+}
+
+.CaseStudyImage {
+    max-width: 50%;
+    margin-right: 20px;
+}
+
+.CaseStudyCopy {
+    max-width: 50%;
+    padding-right: 50px;
+}
+
+footer {
+    display: flex;
+    padding: 30px;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .nav-mobile {
+      display: block;
+    }
+  
+      h1 {
+          font-size: 24px;
+      }
+  
+      h2 {
+          font-size: 18px;
+      }
+  
+      .titleContainer {
+          display: flex;
+      }
+  }
+  
+  @media screen and (max-width: 1024px) {
+      nav {
+          display: none;
+      }
+      .nav-mobile {
+      display: block;
+      }
+    
+      p {
+          font-size: 14px;
+      }
+    
+      .CaseStudyCard {
+              width: 100%;
+          }
+  
+      .CaseStudyCard img {
+          width: 80%;
+      }
+
+      footer {
+        display: flex;
+        flex-direction: column;
+      }
+  }
+
